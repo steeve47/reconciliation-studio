@@ -1,0 +1,6 @@
+batch_id,transaction_id,status,exception_detail,reason_code,reason_explanation,rule_version,processed_at_utc,review_status,review_decision,reviewer_id,review_notes,reviewed_at_utc
+REC-5E09768EEF,T003,Amount mismatch,Bank amount: 800.00; ledger amount: 850.00.,AMOUNT_MISMATCH,Records may differ in amount or another matching field; investigate.,1.0.0,2026-10-25T06:43:55.269576+00:00,PENDING_REVIEW,,,,
+REC-5E09768EEF,T004,Missing in ledger,Bank reference has no ledger record.,MISSING_IN_LEDGER,Bank-side transaction has no identified ledger counterpart.,1.0.0,2026-10-25T06:43:55.269576+00:00,PENDING_REVIEW,,,,
+REC-5E09768EEF,T005,Missing in bank statement,Ledger reference has no bank record.,MISSING_IN_BANK_STATEMENT,Ledger-side transaction has no identified bank counterpart.,1.0.0,2026-10-25T06:43:55.269576+00:00,PENDING_REVIEW,,,,
+REC-5E09768EEF,T006,Duplicate review,Bank records: 2; ledger records: 1.,DUPLICATE_REFERENCE,Duplicate reference detected; manual review required.,1.0.0,2026-10-25T06:43:55.269576+00:00,PENDING_REVIEW,,,,
+REC-5E09768EEF,T007,Missing in bank statement,Ledger reference has no bank record.,MISSING_IN_BANK_STATEMENT,Ledger-side transaction has no identified bank counterpart.,1.0.0,2026-10-25T06:43:55.269576+00:00,PENDING_REVIEW,,,,

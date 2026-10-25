@@ -1,0 +1,8 @@
+transaction_id,date,amount,description
+T001,2026-10-01,1000.00,Customer payment
+T002,2026-10-01,2500.00,Invoice payment
+T003,2026-10-02,800.00,Utility payment
+T004,2026-10-02,4000.00,Supplier payment
+T006,2026-10-03,600.00,Customer transfer
+T006,2026-10-03,600.00,Duplicate transfer record
+T008,2026-10-04,1500.00,Bank fee

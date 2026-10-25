@@ -1,0 +1,37 @@
+{
+  "project": "AI-Assisted Financial Reconciliation",
+  "environment": "Synthetic demonstration only",
+  "summary_updated_at_utc": "2026-10-25T06:49:34.243121+00:00",
+  "batch_id": "REC-5E09768EEF",
+  "rule_version": "1.0.0",
+  "transaction_result_rows": 8,
+  "original_status_counts": {
+    "Matched": 3,
+    "Missing in bank statement": 2,
+    "Amount mismatch": 1,
+    "Missing in ledger": 1,
+    "Duplicate review": 1
+  },
+  "rows_requiring_human_review": 5,
+  "uat": {
+    "tests_recorded": 9,
+    "passed": 9,
+    "failed": 0,
+    "not_run": 0,
+    "pass_rate_percent": 100.0,
+    "all_recorded_tests_passed": true,
+    "evidence_file": "uat_evidence_tracker.csv"
+  },
+  "controls": {
+    "human_review_for_exceptions": true,
+    "automated_journal_posting_enabled": false,
+    "automated_payment_enabled": false,
+    "data_classification": "SYNTHETIC_DEMO"
+  },
+  "limitations": [
+    "UAT results apply only to recorded synthetic test cases.",
+    "Passing UAT does not establish production readiness.",
+    "Human review decisions have not been assumed or fabricated.",
+    "The invalid amount test must pass for the suite to reach 9/9."
+  ]
+}

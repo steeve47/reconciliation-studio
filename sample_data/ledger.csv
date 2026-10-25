@@ -1,0 +1,8 @@
+transaction_id,date,amount,description
+T001,2026-10-01,1000.00,Customer payment
+T002,2026-10-01,2500.00,Invoice payment
+T003,2026-10-02,850.00,Utility payment
+T005,2026-10-03,1200.00,Office supplies
+T006,2026-10-03,600.00,Customer transfer
+T007,2026-10-04,900.00,Insurance expense
+T008,2026-10-04,1500.00,Bank fee

@@ -1,0 +1,10 @@
+test_id,scenario,expected,actual,status,evidence
+UAT-01,Same reference and amount,Matched,Matched,PASS,Unique reference and amount agree.
+UAT-02,Same reference but different amount,Amount mismatch,Amount mismatch,PASS,Same reference; amounts differ.
+UAT-03,Transaction exists only in bank statement,Missing in ledger,Missing in ledger,PASS,Bank reference has no ledger counterpart.
+UAT-04,Transaction exists only in ledger,Missing in bank statement,Missing in bank statement,PASS,Ledger reference has no bank counterpart.
+UAT-05,Duplicate transaction reference,Duplicate review,Duplicate review,PASS,Duplicate bank reference must not be arbitrarily matched.
+UAT-06,Required column missing,Input rejected with validation error,Input rejected with validation error,PASS,Rejected with DataValidationError: Bank statement: missing required columns: amount.
+UAT-07,Blank transaction reference,Input rejected with validation error,Input rejected with validation error,PASS,Rejected with DataValidationError: Bank statement: blank transaction reference at spreadsheet row(s) [2].
+UAT-08,Invalid transaction date,Input rejected with validation error,Input rejected with validation error,PASS,Rejected with DataValidationError: Bank statement: invalid date at row(s) [2].
+UAT-09,Invalid transaction amount,Input rejected with validation error,Input rejected with validation error,PASS,Rejected with DataValidationError: Bank statement: invalid or missing amount at row 2: 'not-a-number'.

@@ -1,0 +1,12 @@
+{
+    "assumptions": {
+        "average_manual_processing_time_minutes": 4.0,
+        "estimated_monthly_volume": 1500,
+        "measured_automated_match_rate_percent": 37.5
+    },
+    "projections": {
+        "estimated_transactions_auto_matched_monthly": 562,
+        "estimated_labor_hours_saved_monthly": 37.5,
+        "projected_annual_hours_saved": 450.0
+    }
+}
