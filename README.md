@@ -1,33 +1,53 @@
 # ClearLedger Reconciliation Studio
 
-A portfolio-ready, rules-based prototype for reconciling a bank statement with
-an accounting ledger. Upload two CSVs, map the transaction columns, review
-explanations for exceptions, and download reconciliation, review, and batch
-traceability files.
+ClearLedger is an interactive Streamlit prototype that demonstrates how a
+finance team could compare a bank statement with an accounting ledger, surface
+exceptions, and prepare them for human review. It is designed as a business
+analysis and workflow portfolio project, with deterministic matching rules,
+traceable results, and an editable capacity-planning scenario.
 
 > **Demonstration only.** Start with the included synthetic data. Do not upload
 > confidential, personal, or real financial data to a public demo. This is not
 > an accounting control, production banking system, or source of financial
 > advice.
 
-## What it does
+## Features
 
-- Accepts separate bank-statement and ledger CSV files (up to 20 MB each).
-- Maps reference, date, amount, and optional description columns independently.
-- Validates required data and reports input errors instead of guessing.
-- Matches a unique, case-sensitive transaction reference and exact amount to
-  the cent.
-- Flags duplicate references, missing records, and amount differences with
-  reason codes and human-readable explanations.
-- Shows an outcome summary and filterable result table.
-- Downloads a result CSV, a human-review worksheet, and a JSON batch manifest
-  with rule version, source hashes, and counts.
-- Includes a separate editable TZS capacity-planning scenario and governance
-  and business-analysis documentation.
+- **Explore the workflow:** run the included synthetic example without
+  preparing files first.
+- **Bring two CSVs:** upload a bank statement and ledger export, then map their
+  reference, date, amount, and optional description columns independently.
+- **Validate before matching:** malformed CSVs, missing values, invalid dates,
+  ambiguous headers, and amounts with more than two decimal places are rejected
+  with an actionable error.
+- **Reconcile deterministically:** a record is matched only when its
+  case-sensitive transaction reference is unique in both sources and its
+  amount agrees to the cent.
+- **Review exceptions:** duplicate references, missing records, and amount
+  differences receive reason codes and explanations for human investigation.
+- **Inspect the batch:** review outcome counts, filter results by status, and
+  inspect the batch traceability manifest.
+- **Download useful outputs:** export the complete reconciliation, an
+  exception-only review worksheet, and batch audit metadata as JSON.
+- **Explore a business case:** adjust planning assumptions in the separate TZS
+  capacity-planning page.
 
-The prototype uses deterministic rules and makes **no external AI calls**.
-Dates are validated but not used as a matching key. A match is not proof that a
-transaction is legitimate or properly authorized.
+The prototype is rules-based and makes **no external AI calls**. Dates are
+validated but are not a matching key. A match does not prove a transaction is
+legitimate, authorized, or correctly posted.
+
+## Screenshots
+
+Screenshots below show the running prototype with its included synthetic
+example data.
+
+| App overview | Reconciliation summary |
+|---|---|
+| ![ClearLedger app overview](screenshots/01-app-overview.png) | ![Synthetic reconciliation summary showing counts and human-review workload](screenshots/02-reconciliation-summary.png) |
+
+**Results and downloads**
+
+![Reconciliation result table and downloadable review and audit files](screenshots/03-results-table-and-downloads.png)
 
 ## Run locally (Windows PowerShell)
 
@@ -118,23 +138,11 @@ savings. See [`docs/portfolio-case-study.md`](docs/portfolio-case-study.md),
 [`docs/responsible-ai-governance.md`](docs/responsible-ai-governance.md), and
 [`docs/business-case.md`](docs/business-case.md).
 
-## Publishing to GitHub later
+## Repository and safe use
 
-This folder is not initialized as a Git repository, and no GitHub repository
-or remote has been created. Before publishing:
-
-1. Review every file, especially `reports/`, `logs_and_evidence/`, and the
-   generated governance report, and remove anything you do not intend to share.
-   The sample CSVs are synthetic; never add real customer or financial data.
-2. Decide whether the repository should be public or private and choose a
-   license only if you have the rights and intend to grant those permissions.
-   No license has been selected for this project.
-3. Create an empty repository on GitHub and upload only the reviewed project
-   files. `.gitignore` excludes virtual environments, secrets, and common
-   Python test artifacts, but it does not replace a manual review.
-4. Confirm the **Tests** workflow passes on the default branch. It is configured
-   to run for pushes and pull requests.
-
-Do not publish `.env` files, Streamlit secrets, private reports, or uploaded
-source data. A hosted demo receives uploaded files on its server; assess
-hosting, access, and retention separately before sharing it publicly.
+This project is published at
+[github.com/steeve47/reconciliation-studio](https://github.com/steeve47/reconciliation-studio).
+The included sample CSVs are synthetic. Do not commit credentials, Streamlit
+secrets, private reports, or uploaded source data. A hosted demo receives
+uploaded files on its server; assess hosting, access, and retention separately
+before sharing it publicly. No license has been selected for this project.
